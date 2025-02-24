@@ -30,7 +30,8 @@ Video Walkthrough [Here](https://github.com/bensalcie/craftsiliconweather/blob/m
 
 ### Prerequisites  
 Ensure the following are installed on your system:  
-- [Flutter SDK](https://docs.flutter.dev/get-started/install) (v3.13 or later)  
+- [Flutter SDK](https://docs.flutter.dev/get-started/install) (v3.7.0 or later) 
+- [Dart SDK](https://docs.flutter.dev/get-started/install) (v2.19.0 or later) 
 - [Android Studio](https://developer.android.com/studio) or [Xcode](https://developer.apple.com/xcode/) (for iOS development)  
 - OpenWeather API Key ([Sign up here](https://openweathermap.org/api))  
 
