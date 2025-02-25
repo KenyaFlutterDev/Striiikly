@@ -49,7 +49,7 @@ class AppTheme {
         //isDarkMode ? kPageBackgroundDark : kPageBackgroundLight,
         toolbarTextStyle: TextStyle(
           color: isDarkMode ? kTextActionBarDark : kTextActionBarLight,
-          // fontFamily: app_font,TODO ADD FONTS 
+          // fontFamily: app_font,TODO ADD FONTS
           fontSize: 15,
           fontWeight: FontWeight.w600,
         ),
@@ -63,12 +63,14 @@ class AppTheme {
         ),
         centerTitle: false,
       ),
-      colorScheme: isDarkMode
-          ? ColorScheme.dark(primary: kPrimaryDark)
-          : ColorScheme.light(primary: kPrimaryColor),
+      colorScheme:
+          isDarkMode
+              ? ColorScheme.dark(primary: kPrimaryDark)
+              : ColorScheme.light(primary: kPrimaryColor),
       buttonTheme: const ButtonThemeData(textTheme: ButtonTextTheme.primary),
       progressIndicatorTheme: ProgressIndicatorThemeData(
-          color: isDarkMode ? kPrimaryDark : kPrimaryColor),
+        color: isDarkMode ? kPrimaryDark : kPrimaryColor,
+      ),
       textTheme: TextTheme(
         bodyMedium: TextStyle(
           color: isDarkMode ? Colors.white70 : Colors.black87,
@@ -77,8 +79,10 @@ class AppTheme {
       ),
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ButtonStyle(
-            backgroundColor: WidgetStatePropertyAll(
-                isDarkMode ? kPrimaryColor : kPrimaryDark)),
+          backgroundColor: WidgetStatePropertyAll(
+            isDarkMode ? kPrimaryColor : kPrimaryDark,
+          ),
+        ),
       ),
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
         backgroundColor:
