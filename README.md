@@ -6,14 +6,15 @@ Transform your GitHub activity into a competitive arena. Earn points, climb the 
 
 
 ## Features ✨  
-- **Real-time Weather Data**: Displays current weather (temperature, wind speed, humidity) for the selected city.  
-- **5-Day Forecast**: Provides a detailed daily forecast for the upcoming five days.  
-- **City Search**: Allows users to search and view weather information for any city globally.  
-- **Responsive Design**: Works seamlessly on different screen sizes.  
-- **Modern UI/UX**: Sleek, gradient backgrounds, clean typography, and dynamic icons to enhance the experience.  
-- **Offline Storage**: Caches data locally to allow offline access to previously fetched weather data.  
-- **Error Handling**: Displays appropriate messages when data cannot be fetched (e.g., no internet).  
-
+- [x] **Gamified Contribution Tracking**: Earn points for commits, pull requests, issues, and more.
+- [x] **Daily Streaks**: Track and maintain your contribution streaks to stay consistent.
+- [x] **Leaderboards**: Compete with friends or other developers and climb to the top.
+- [x] **Dynamic Levels**: Level up every 500 points and showcase your progress.
+- [x] **Profile Overview**: View your total points, streaks, and rank in one place.
+- [ ] **Achievements**: Unlock badges and milestones for key GitHub activities.
+- [ ] **Reminders**: Get daily nudges to ensure you don’t miss contributing.
+- [ ] **Interactive Challenges**: Challenge friends to coding duels for extra points.
+- [ ] **Activity Insights**: Visualize your GitHub activity with clear graphs and stats.
 ---
 
 ## Clean Architecture and State Management  
@@ -29,7 +30,8 @@ Video Walkthrough [Here](https://github.com/bensalcie/craftsiliconweather/blob/m
 
 ### Prerequisites  
 Ensure the following are installed on your system:  
-- [Flutter SDK](https://docs.flutter.dev/get-started/install) (v3.13 or later)  
+- [Flutter SDK](https://docs.flutter.dev/get-started/install) (v3.7.0 or later) 
+- [Dart SDK](https://docs.flutter.dev/get-started/install) (v2.19.0 or later) 
 - [Android Studio](https://developer.android.com/studio) or [Xcode](https://developer.apple.com/xcode/) (for iOS development)  
 - OpenWeather API Key ([Sign up here](https://openweathermap.org/api))  
 
