@@ -1,30 +1,47 @@
-#### What does this PR do?
+### Type
+- [ ] Feature
+- [ ] Bug
+- [ ] Enhancement
+- [ ] Chore
 
-<!-- A short description of what the pull request does -->
+### Status
+- [ ] Work In Progress
+- [ ] Completed
+- [ ] In Review
 
-#### Description of Task to be completed?
+### Checks
+- [ ] I have run `./gradlew build` or build and it passed successfully
+- [ ] I have run `./gradlew check` or tests and all have passed successfully
+- [ ] I have tested the app on a physical device and it works as intended
 
-<!-- Outline the tasks completed by the pr -->
+### Previous Behaviour
+> what is the current behaviour of what was being worked on
 
-- [x] task one
-- [x] task two
-- [x] task three
+None
 
-#### How should this be manually tested?
+### Current Behaviour
+> what is the current behaviour of what was being worked on
 
-Clone repository as directly on [README.md](README.md) to run the app locally and navigate to:
+None
 
-<!-- Add page to navigate to -->
+### Intended Behaviour
+> what is the intended behaviour of what was being worked on
 
-#### Any background context you want to provide?
+None
 
-<!-- An reason behind the implementation. -->
+### Closes Issues
+> issue number of what was being worked on (__if necessary__)
 
-#### What are the relevant JIRA issue?
+None
 
+[//]: # (`fixes #1` or `closes #1`)
 
-[PL-\*](https://fluttersolutions.atlassian.net/browse/PL-{ISSUE_ID_NUMBER})
+### Notes
+> additional information of what was being worked on (__if necessary__)
 
-#### Screenshots (if appropriate)
+None
 
-#### Questions
+### Screenshot
+> an image of what was being worked on (__if necessary__)
+
+None
