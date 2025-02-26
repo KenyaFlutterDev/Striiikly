@@ -9,11 +9,29 @@
 # packages, and plugins designed to encourage good coding practices.
 include: package:flutter_lints/flutter.yaml
 
+analyzer:
+  plugins:
+    - dart_code_metrics
+
+  exclude:
+    - 'example/**'
+    - 'build/**'
+    - '**/*.g.dart'
+    - 'lib/**/app_database.g.dart'
+    - '**/*.freezed.dart'
+    - 'lib/di/injection.config.dart'
+    - 'test/**'
+
+  errors:
+    annotate_overrides: ignore
+    overridden_fields: ignore
+
 linter:
   # The lint rules applied to this project can be customized in the
   # section below to disable rules from the `package:flutter_lints/flutter.yaml`
   # included above or to enable additional rules. A list of all available lints
-  # and their documentation is published at https://dart.dev/lints.
+  # and their documentation is published at
+  # https://dart-lang.github.io/linter/lints/index.html.
   #
   # Instead of disabling a lint rule for the entire project in the
   # section below, it can also be suppressed for a single line of code
@@ -21,8 +39,107 @@ linter:
   # `// ignore_for_file: name_of_lint` syntax on the line or in the file
   # producing the lint.
   rules:
-    # avoid_print: false  # Uncomment to disable the `avoid_print` rule
-    # prefer_single_quotes: true  # Uncomment to enable the `prefer_single_quotes` rule
-
+    avoid_print: true # Uncomment to disable the `avoid_print` rule
+    prefer_single_quotes: true
 # Additional information about this file can be found at
 # https://dart.dev/guides/language/analysis-options
+
+dart_code_metrics:
+  metrics:
+    cyclomatic-complexity: 20
+    number-of-parameters: 4
+    maximum-nesting-level: 5
+    technical-debt:
+      threshold: 1
+      todo-cost: 161
+      ignore-cost: 320
+      ignore-for-file-cost: 396
+      as-dynamic-cost: 322
+      deprecated-annotations-cost: 37
+      file-nullsafety-migration-cost: 41
+      unit-type: 'USD'
+  metrics-exclude:
+    - test/**
+    - lib/di/injection.config.dart
+  rules:
+    - avoid-duplicate-exports:
+        severity: error
+    - avoid-border-all:
+        severity: error
+    - avoid-dynamic:
+        severity: error
+        exclude:
+          - '**/cubit/**/**.dart'
+    - avoid-throw-in-catch-block:
+        severity: warning
+    - avoid-duplicate-exports:
+        severity: error
+    - avoid-global-state:
+        severity: error
+    - avoid-unnecessary-type-casts:
+        severity: error
+    - avoid-unnecessary-type-assertions:
+        severity: error
+    - avoid-non-null-assertion
+    - avoid-unused-parameters:
+        severity: warning
+    - avoid-unnecessary-setstate:
+        severity: error
+    - avoid-wrapping-in-padding:
+        severity: error
+    - newline-before-return:
+        severity: warning
+    - no-boolean-literal-compare
+    - format-comment
+    - double-literal-format:
+        severity: warning
+    - always-remove-listener
+    - no-boolean-literal-compare:
+        severity: error
+    - no-empty-block:
+        severity: error
+    - no-equal-then-else:
+        severity: error
+    - prefer-async-await:
+        severity: warning
+    - prefer-trailing-comma:
+        severity: error
+    - prefer-const-border-radius:
+        severity: error
+    - prefer-correct-edge-insets-constructor
+    - prefer-conditional-expressions:
+        severity: warning
+    - prefer-immediate-return:
+        severity: warning
+    - prefer-extracting-callbacks:
+        ignored-named-arguments:
+          ['onPressed', 'onTap', 'onWillPop', 'listener', 'onIndexChanged']
+        allowed-line-count: 3
+    - prefer-first:
+        severity: warning
+    - prefer-last:
+        severity: warning
+    - prefer-commenting-analyzer-ignores:
+        severity: error
+    - prefer-single-widget-per-file:
+        exclude: lib/app.dart
+    - avoid-shrink-wrap-in-lists
+    - prefer-match-file-name:
+        exclude:
+          - lib/core/network/dio_config.dart
+          - lib/main.dart
+          - lib/core/theme.dart
+          - lib/core/error/*.dart
+          - lib/di/*.dart
+    - member-ordering:
+        order:
+          - init-state-method
+          - did-change-dependencies-method
+          - did-update-widget-method
+          - dispose-method
+          - build-method
+  anti-patterns:
+    - long-method:
+        exclude:
+          - lib/**/theme.dart
+    - long-parameter-list
