@@ -56,6 +56,7 @@ class _ScaffoldWithNavBarState extends State<ScaffoldWithNavBar>
       resizeToAvoidBottomInset: true,
       bottomNavigationBar: BottomNavigationBar(
         elevation: 0,
+        type: BottomNavigationBarType.fixed,
         backgroundColor: Colors.transparent,
         showUnselectedLabels: true,
         unselectedItemColor: Colors.grey,

@@ -19,7 +19,7 @@ class BottomMenuIcon extends StatelessWidget {
   Widget build(BuildContext context) {
     return Ink(
       height: 50,
-      width: 70,
+      width: 80,
       decoration: BoxDecoration(
         color:
             isActive

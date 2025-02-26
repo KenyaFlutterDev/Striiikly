@@ -16,5 +16,5 @@ const achievements_label = 'Achievments';
 // Tab Icons.
 const leaderboard_icon = 'assets/images/leaderboard.svg';
 const teams_icon = 'assets/images/teams.svg';
-const contributions_icon = 'assets/images/contributions.svg';
+const contributions_icon = 'assets/images/contribute.svg';
 const achievements_icon = 'assets/images/achievements.svg';
