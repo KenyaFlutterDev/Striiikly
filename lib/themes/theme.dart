@@ -1,29 +1,30 @@
 import 'package:flutter/material.dart';
+import 'package:striiikly/core/common/constants/app_strings.dart';
 
-Color kPrimaryColor = HexColor("#F4F5F7");
+Color kPrimaryColor = HexColor('#F4F5F7');
 Color kPrimaryDark = HexColor('#000000');
 Color kPageBackgroundLight = const Color.fromRGBO(244, 245, 247, 1);
 Color kPageBackgroundDark = HexColor('#333333');
-Color kTextActionBarLight = HexColor("#6E9232");
-Color kTextActionBarDark = HexColor("#C9DCED");
-Color kIconThemeColorLight = HexColor("#1A2139");
-Color kIconThemeColorDark = HexColor("#E8F1D9");
+Color kTextActionBarLight = HexColor('#6E9232');
+Color kTextActionBarDark = HexColor('#C9DCED');
+Color kIconThemeColorLight = HexColor('#1A2139');
+Color kIconThemeColorDark = HexColor('#E8F1D9');
 Color kBodyBackgroundLight = Colors.grey[200]!;
 Color kBodyBackgroundDark = Colors.grey[900]!;
 Color kDarkBannerColor = HexColor('#333333');
-Color kInputTitleColor = HexColor("#515151");
-Color kTextInputBackgroundColor = HexColor("#F4F5F7");
+Color kInputTitleColor = HexColor('#515151');
+Color kTextInputBackgroundColor = HexColor('#F4F5F7');
 
 Color kBtnDarkColor = HexColor('#0B1327');
-Color kLightColor = HexColor("#FFFFFF");
+Color kLightColor = HexColor('#FFFFFF');
 Color kAccountCardOptionColor = HexColor('#4D4D4D');
 Color kRatingCountTextColor = HexColor('#4C4C4C');
 
 class HexColor extends Color {
   static int _getColorFromHex(String hexColor) {
-    hexColor = hexColor.toUpperCase().replaceAll("#", "");
+    hexColor = hexColor.toUpperCase().replaceAll('#', '');
     if (hexColor.length == 6) {
-      hexColor = "FF$hexColor";
+      hexColor = 'FF$hexColor';
     }
     return int.parse(hexColor, radix: 16);
   }
@@ -38,7 +39,7 @@ class AppTheme {
     return ThemeData(
       brightness: brightness,
       primaryColor: isDarkMode ? kPrimaryDark : kPrimaryColor,
-      // fontFamily: app_font,
+      fontFamily: app_font,
       useMaterial3: true,
       primaryColorDark: kPrimaryDark,
       dialogTheme: DialogTheme(

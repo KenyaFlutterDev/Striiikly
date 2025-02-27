@@ -1,67 +1,51 @@
-import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const MyApp());
+import 'package:equatable/equatable.dart';
+import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:striiikly/app.dart';
+import 'package:striiikly/core/common/constants/app_strings.dart';
+import 'package:striiikly/core/common/data/datasources/local/storage_utils.dart';
+import 'package:striiikly/core/common/di/injection.dart';
+import 'package:striiikly/core/common/presentation/widgets/blocs_root.dart';
+import 'package:striiikly/core/common/utils/app_global_observer.dart';
+import 'package:striiikly/themes/theme.dart';
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  EquatableConfig.stringify = kDebugMode;
+  if (kDebugMode) {
+    await dotenv.load(fileName: '.dev.env');
+  } else {
+    await dotenv.load(fileName: '.env');
+  }
+
+  await configureDependencies();
+
+  if (kDebugMode) {
+    Bloc.observer = AppGlobalBlocObserver();
+  }
+
+  /// Please add all BloCs ref to [BlocsRoot]
+  final apptoken = await getIt<StorageUtils>().getDataForSingle(key: token);
+  runApp(BlocsRoot(apptoken: apptoken));
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  final String token;
+  const MyApp({super.key, required this.token});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Striikly Hureeeey',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-      ),
-      home: const MyHomePage(title: 'Striikly Hureeeey'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text('You have pushed the button this many times:'),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      debugShowCheckedModeBanner: false,
+      title: app_title,
+      theme: AppTheme.main(Brightness.light),
+      darkTheme: AppTheme.main(Brightness.dark),
+      themeMode:
+          ThemeMode.system, // Switches automatically based on system setting
+      home: App(),
     );
   }
 }
